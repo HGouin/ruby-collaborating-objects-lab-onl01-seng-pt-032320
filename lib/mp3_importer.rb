@@ -1,11 +1,14 @@
 class MP3Importer
 
+  attr_reader :path
+
   def initialize(file_path)
-    @file_path = file_path
+    @path = file_path
+
   end
 
   def files
-Dir.entries(@file_path)
+    Dir.entries(@file_path).each do
   end
 
   def import
