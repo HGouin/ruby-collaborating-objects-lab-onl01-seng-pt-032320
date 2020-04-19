@@ -1,14 +1,11 @@
 class MP3Importer
 
-  attr_reader :path
+  attr_reader :path, :files
 
   def initialize(file_path)
     @path = file_path
-
-  end
-
-  def files
-    Dir.entries(@path).each do
+    @files = Dir.entries(@path).collect do |file|
+      file.split("/").last
     end
   end
 
