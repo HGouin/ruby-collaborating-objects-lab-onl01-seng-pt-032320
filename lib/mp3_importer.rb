@@ -4,7 +4,7 @@ class MP3Importer
 
   def initialize(file_path)
     @path = file_path
-    @files = Dir[@path].select{ |f| File.file? f }.collect{ |file| file.split("/").last }
+    @files = Dir.entries(@path).filter{|f| File.file? f }.collect{ |file| file.split("/").last }
 
   end
 
